@@ -26,12 +26,12 @@ VALUES
 INSERT INTO Caso 
 (idCaso, titulo, data_a, data_f, descricao, observacoes, status, especialidade, idAdmin)
 VALUES
-  (1, 'Assalto à mão armada', '2024-05-24', '2024-05-30', 'Sujeito vestia t-shirt preta e máscara. Vítimas: caixa e cliente', 'Dinheiro roubado: R$ 500,00.', 'Em andamento', 'Roubos', 1),
-  (2, 'Roubo de carro', '2024-05-23', '2024-05-25', 'Carro roubado de estacionamento', 'Placa: ABC-1234', 'Em andamento', 'Investigação Criminal', 2),
+  (1, 'Assalto à mão armada', '2024-05-24', '2024-05-30', 'Sujeito vestia t-shirt preta e máscara. Vítimas: caixa e cliente', 'Dinheiro roubado: 500,00€.', 'Aberto', 'Roubos', 1),
+  (2, 'Roubo de carro', '2024-05-23', '2024-05-25', 'Carro roubado de estacionamento', 'Placa: AB-12-34', 'Aberto', 'Investigação Criminal', 2),
   (3, 'Tráfico de drogas', '2024-05-22', '2024-05-29', 'Operação policial apreende drogas e prende traficante', 'Drogas: cocaína, marijuana.', 'Concluído', 'Narcóticos', 1),
-  (4, 'Homicídio', '2024-05-21', '2024-05-23', 'Corpo encontrado em parque. Local: Parque Municipal.', 'Vítima: homem de 40 anos. Causa da morte: tiro no peito.', 'Em andamento', 'Homicídios', 1),
-  (5, 'Estupro', '2024-05-20', '2024-05-23', 'Mulher estuprada em sua casa', 'Vítima: mulher de 25 anos. Suspeito: desconhecido.', 'Em andamento', 'Crimes Sexuais', 3),
-  (6, 'Fraude', '2024-05-19', '2024-05-27', 'Empresa vítima de fraude', 'Quantia: R$ 10.000,00. Método: esquema de phishing.', 'Em andamento', 'Fraudes', 2);
+  (4, 'Homicídio', '2024-05-21', '2024-05-23', 'Corpo encontrado em parque. Local: Parque Municipal.', 'Vítima: homem de 40 anos. Causa da morte: tiro no peito.', 'Aberto', 'Homicídios', 1),
+  (5, 'Estupro', '2024-05-20', '2024-05-23', 'Mulher violada em sua casa', 'Vítima: mulher de 25 anos. Suspeito: desconhecido.', 'Aberto', 'Crimes Sexuais', 3),
+  (6, 'Fraude', '2024-05-19', '2024-05-27', 'Empresa vítima de fraude', 'Quantia: R$ 10.000,00. Método: esquema de phishing.', 'Aberto', 'Fraudes', 2);
 
 -- Popular a tabela Cliente
 INSERT INTO Cliente (id_Cliente, password, nome, idade, email, telefone, idAdmin)
@@ -76,8 +76,8 @@ VALUES
   (1, 'Foto do local do crime', 'Foto', 'Foto do local do crime.', '2024-05-24', 'Rua da República, 123', 1, 5),
   (2, 'Arma utilizada no crime', 'Objeto', 'Arma de fogo.', '2024-05-24', 'Agencia da Polícia', 4, 9),
   (3, 'Impressões digitais da arma', 'Evidência física', 'Impressões digitais do suspeito.', '2024-05-24', 'Laboratório de Criminalística', 4, 9),
-  (4, 'Depoimento da vítima', 'Testemunho', 'Depoimento da vítima sobre o crime.', '2024-05-24', 'Delegacia de Polícia', 1, 1),
-  (5, 'Câmeras de segurança', 'Vídeo', 'Imagens das câmeras de segurança do local do crime.', '2024-05-24', 'Delegacia de Polícia', 2, 8),
-  (6, 'Registro de ligação', 'Dados eletrônicos', 'Registro de ligação telefônica entre o suspeito e a vítima.', '2024-05-24', 'Delegacia de Polícia', 6, 3),
-  (7, 'Mensagem de texto', 'Dados eletrônicos', 'Mensagem de texto enviada pelo suspeito para a vítima.', '2024-05-24', 'Delegacia de Polícia', 5, 5),
-  (8, 'Localização do celular do suspeito', 'Dados eletrônicos', 'Localização do celular do suspeito no momento do crime.', '2024-05-24', 'Delegacia de Polícia', 5, 5);
+  (4, 'Depoimento da vítima', 'Testemunho', 'Depoimento da vítima sobre o crime.', '2024-05-24', 'Esquadra de Polícia', 1, 1),
+  (5, 'Câmeras de segurança', 'Vídeo', 'Imagens das câmeras de segurança do local do crime.', '2024-05-24', 'Esquadra de Polícia', 2, 8),
+  (6, 'Registo de ligação', 'Dados eletrônicos', 'Registo de ligação telefônica entre o suspeito e a vítima.', '2024-05-24', 'Esquadra de Polícia', 6, 3),
+  (7, 'Mensagem de texto', 'Dados eletrônicos', 'Mensagem de texto enviada pelo suspeito para a vítima.', '2024-05-24', 'Esquadra de Polícia', 5, 5),
+  (8, 'Localização do telefone do suspeito', 'Dados eletrônicos', 'Localização do telefone do suspeito no momento do crime.', '2024-05-24', 'Esquadra de Polícia', 5, 5);
