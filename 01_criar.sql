@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS agencia;
 -- -----------------------------------------------------
 -- Database agencia
 -- -----------------------------------------------------
@@ -10,7 +11,7 @@ USE `agencia`;
 CREATE TABLE IF NOT EXISTS `agencia`.`Administrador` (
   `idAdmin` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(25) NOT NULL,
+  `pass` VARCHAR(25) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idAdmin`))
 ENGINE = InnoDB;
@@ -24,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `agencia`.`Caso` (
   `data_a` DATE NOT NULL,
   `data_f` DATE NOT NULL,
   `descricao` VARCHAR(100) NOT NULL,
-  `observacoes` VARCHAR(100) NULL,
+  `observacoes` VARCHAR(1000) NULL,
   `status` VARCHAR(15) NOT NULL,
   `especialidade` VARCHAR(45) NOT NULL,
   `idAdmin` INT NOT NULL,
@@ -49,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `agencia`.`Detetive` (
   `email` VARCHAR(45) NULL,
   `morada` VARCHAR(45) NULL,
   `especialidade` VARCHAR(25) NULL,
-  `horario` VARCHAR(45) NULL,
+  `horario` VARCHAR(500) NULL,
   `idAdmin` INT NOT NULL,
   PRIMARY KEY (`id_detetive`),
   CONSTRAINT `fk_Detetive_Administrador`
@@ -116,7 +117,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `agencia`.`Evidencia` (
   `id_Evidencia` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(100) NOT NULL,
-  `tipo` VARCHAR(15) NOT NULL,
+  `tipo` VARCHAR(500) NOT NULL,
   `notas` VARCHAR(100) NULL,
   `data` DATE NOT NULL,
   `localizacao` VARCHAR(45) NOT NULL,

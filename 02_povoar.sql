@@ -4,6 +4,7 @@ USE agencia;
 SET sql_safe_updates=0;
 
 -- Remover todos os dados existentes das tabelas (opcional)
+SET foreign_key_checks = 0;
 DELETE FROM Administrador;
 DELETE FROM Cliente;
 DELETE FROM Detetive;
@@ -11,13 +12,15 @@ DELETE FROM Caso;
 DELETE FROM Suspeito;
 DELETE FROM Detetive_Caso;
 DELETE FROM Evidencia;
+SET foreign_key_checks = 1;
 
 -- Popular a tabela Administrador
-INSERT INTO Administrador (idAdmin, email, password, nome)
+INSERT INTO Administrador (idAdmin, email, pass, nome)
 VALUES
   (1, 'joaoSilva@gmail.com', 'joao', 'João da Silva'),
   (2, 'tiagoP22@hotmail.com', 'tiagoP22', 'Tiago Miguel Pereira'),
   (3, 'anad20@gmail.com', 'ana20', 'Ana Maria da Costa');
+
 
 -- Popular a tabela Caso
 INSERT INTO Caso 
@@ -25,7 +28,7 @@ INSERT INTO Caso
 VALUES
   (1, 'Assalto à mão armada', '2024-05-24', '2024-05-30', 'Sujeito vestia t-shirt preta e máscara. Vítimas: caixa e cliente', 'Dinheiro roubado: R$ 500,00.', 'Em andamento', 'Roubos', 1),
   (2, 'Roubo de carro', '2024-05-23', '2024-05-25', 'Carro roubado de estacionamento', 'Placa: ABC-1234', 'Em andamento', 'Investigação Criminal', 2),
-  (3, 'Tráfico de drogas', '2024-05-22', '2024-05-29', 'Operação policial apreende drogas e prende traficante', 'Drogas: cocaína, maconha.', 'Concluído', 'Narcóticos', 1),
+  (3, 'Tráfico de drogas', '2024-05-22', '2024-05-29', 'Operação policial apreende drogas e prende traficante', 'Drogas: cocaína, marijuana.', 'Concluído', 'Narcóticos', 1),
   (4, 'Homicídio', '2024-05-21', '2024-05-23', 'Corpo encontrado em parque. Local: Parque Municipal.', 'Vítima: homem de 40 anos. Causa da morte: tiro no peito.', 'Em andamento', 'Homicídios', 1),
   (5, 'Estupro', '2024-05-20', '2024-05-23', 'Mulher estuprada em sua casa', 'Vítima: mulher de 25 anos. Suspeito: desconhecido.', 'Em andamento', 'Crimes Sexuais', 3),
   (6, 'Fraude', '2024-05-19', '2024-05-27', 'Empresa vítima de fraude', 'Quantia: R$ 10.000,00. Método: esquema de phishing.', 'Em andamento', 'Fraudes', 2);
