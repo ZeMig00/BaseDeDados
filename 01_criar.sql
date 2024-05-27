@@ -141,7 +141,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `agencia`.`Cadeia_de_custodia` (
   `id_Cad` INT NOT NULL AUTO_INCREMENT,
-  `tipo` VARCHAR(10) NOT NULL,
+  `tipo` VARCHAR(100) NOT NULL,
   `descricao` VARCHAR(45) NOT NULL,
   `data` DATE NOT NULL,
   `id_evidencia` INT NOT NULL,

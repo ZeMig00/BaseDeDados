@@ -81,3 +81,15 @@ VALUES
   (6, 'Registo de ligação', 'Dados eletrônicos', 'Registo de ligação telefônica entre o suspeito e a vítima.', '2024-05-24', 'Esquadra de Polícia', 6, 3),
   (7, 'Mensagem de texto', 'Dados eletrônicos', 'Mensagem de texto enviada pelo suspeito para a vítima.', '2024-05-24', 'Esquadra de Polícia', 5, 5),
   (8, 'Localização do telefone do suspeito', 'Dados eletrônicos', 'Localização do telefone do suspeito no momento do crime.', '2024-05-24', 'Esquadra de Polícia', 5, 5);
+
+-- Populate the Cadeia_de_custodia table
+INSERT INTO Cadeia_de_custodia (id_Cad, tipo, descricao, data, id_evidencia)
+VALUES
+  (1, 'Foto', 'Foto do local do crime recolhida.', '2024-05-24', 1),
+  (2, 'Objeto', 'Arma de fogo recolhida.', '2024-05-24', 2),
+  (3, 'Evidência física', 'Impressões digitais recolhidas.', '2024-05-24', 3),
+  (4, 'Testemunho', 'Depoimento recolhido.', '2024-05-24', 4),
+  (5, 'Vídeo', 'Imagens de câmeras de segurança recolhidas.', '2024-05-24', 5),
+  (6, 'Dados eletrônicos', 'Registo de ligação recolhido.', '2024-05-24', 6),
+  (7, 'Dados eletrônicos', 'Mensagem de texto recolhida.', '2024-05-24', 7),
+  (8, 'Dados eletrônicos', 'Localização do telefone recolhida.', '2024-05-24', 8);
