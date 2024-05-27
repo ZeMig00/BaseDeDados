@@ -93,3 +93,12 @@ VALUES
   (6, 'Dados eletrônicos', 'Registo de ligação recolhido.', '2024-05-24', 6),
   (7, 'Dados eletrônicos', 'Mensagem de texto recolhida.', '2024-05-24', 7),
   (8, 'Dados eletrônicos', 'Localização do telefone recolhida.', '2024-05-24', 8);
+
+INSERT INTO Detetive_Caso (idCaso, id_detetive)
+VALUES
+  (1, 1), -- Detective José Gomes assigned to case 1
+  (4, 2), -- Detective Helder Pereira assigned to case 4
+  (5, 3), -- Detective Marta Temido assigned to case 5
+  (2, 4), -- Detective Jessica Ferreira assigned to case 2
+  (3, 5), -- Detective Pedro Veloso assigned to case 3
+  (6, 6); -- Detective Sara Dias assigned to case 6  
