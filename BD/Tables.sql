@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `agencia`.`Caso` (
   `data_a` DATE NOT NULL,
   `data_f` DATE,
   `descricao` VARCHAR(100) NOT NULL,
-  `observacoes` VARCHAR(1000) NULL,
+  `observacoes` VARCHAR(1000),
   `status` VARCHAR(15) NOT NULL,
   `especialidade` VARCHAR(45) NOT NULL,
   `idAdmin` INT NOT NULL,
@@ -124,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `agencia`.`Evidencia` (
   `id_Evidencia` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(100) NOT NULL,
   `tipo` VARCHAR(500) NOT NULL,
-  `notas` VARCHAR(100) NULL,
+  `notas` VARCHAR(100),
   `data` DATE NOT NULL,
   `localizacao` VARCHAR(45) NOT NULL,
   `id_caso` INT NOT NULL,
@@ -158,3 +158,4 @@ CREATE TABLE IF NOT EXISTS `agencia`.`Cadeia_de_custodia` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+

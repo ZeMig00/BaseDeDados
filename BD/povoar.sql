@@ -24,18 +24,6 @@ VALUES
   (2, 'tiagoP22@hotmail.com', 'tiagoP22', 'Tiago Miguel Pereira'),
   (3, 'anad20@gmail.com', 'ana20', 'Ana Maria da Costa');
 
-
--- Popular a tabela Caso
-INSERT INTO Caso 
-(idCaso, titulo, data_a, data_f, descricao, observacoes, status, especialidade, idAdmin)
-VALUES
-  (1, 'Assalto à mão armada', '2024-05-24', '2024-05-30', 'Sujeito vestia t-shirt preta e máscara. Vítimas: caixa e cliente', 'Dinheiro roubado: 500,00€.', 'Aberto', 'Roubos', 1),
-  (2, 'Roubo de carro', '2024-05-23', '2024-05-25', 'Carro roubado de estacionamento', 'Placa: AB-12-34', 'Aberto', 'Investigação Criminal', 2),
-  (3, 'Tráfico de drogas', '2024-05-22', '2024-05-29', 'Operação policial apreende drogas e prende traficante', 'Drogas: cocaína, marijuana.', 'Concluído', 'Narcóticos', 1),
-  (4, 'Homicídio', '2024-05-21', '2024-05-23', 'Corpo encontrado em parque. Local: Parque Municipal.', 'Vítima: homem de 40 anos. Causa da morte: tiro no peito.', 'Aberto', 'Homicídios', 1),
-  (5, 'Estupro', '2024-05-20', '2024-05-23', 'Mulher violada em sua casa', 'Vítima: mulher de 25 anos. Suspeito: desconhecido.', 'Aberto', 'Crimes Sexuais', 3),
-  (6, 'Fraude', '2024-05-19', '2024-05-27', 'Empresa vítima de fraude', 'Quantia: R$ 10.000,00. Método: esquema de phishing.', 'Aberto', 'Fraudes', 2);
-
 -- Popular a tabela Cliente
 INSERT INTO Cliente (id_Cliente, password, nome, idade, email, telefone, idAdmin)
 VALUES
@@ -48,6 +36,17 @@ VALUES
   (7, 'senha13', 'Bruno Lopes', 42, 'brunolopes@gmail.com', '938576432', 1),
   (8, 'senha14', 'Daniela Almeida', 33, 'danielaalmeida@outlook.com', '929485761', 2),
   (9, 'senha15', 'Ricardo Silva', 26, 'ricardosilva@gmail.com', '910392857', 3);
+
+-- Popular a tabela Caso
+INSERT INTO Caso 
+(idCaso, titulo, data_a, data_f, descricao, observacoes, status, especialidade, idAdmin, idCliente)
+VALUES
+  (1, 'Assalto à mão armada', '2024-05-24', null , 'Sujeito vestia t-shirt preta e máscara. Vítimas: caixa e cliente', 'Dinheiro roubado: 500,00€.', 'Aberto', 'Roubos', 1, 1),
+  (2, 'Roubo de carro', '2024-05-23', null , 'Carro roubado de estacionamento', 'Placa: AB-12-34', 'Aberto', 'Investigação Criminal', 2, 5),
+  (3, 'Tráfico de drogas', '2024-05-22', '2024-05-29', 'Operação policial apreende drogas e prende traficante', 'Drogas: cocaína, marijuana.', 'Concluído', 'Narcóticos', 1, 2),
+  (4, 'Homicídio', '2024-05-21', null , 'Corpo encontrado em parque. Local: Parque Municipal.', 'Vítima: homem de 40 anos. Causa da morte: tiro no peito.', 'Aberto', 'Homicídios', 1, 3),
+  (5, 'Estupro', '2024-05-20', null, 'Mulher violada em sua casa', 'Vítima: mulher de 25 anos. Suspeito: desconhecido.', 'Aberto', 'Crimes Sexuais', 3, 4),
+  (6, 'Fraude', '2024-05-19', null, 'Empresa vítima de fraude', 'Quantia: R$ 10.000,00. Método: esquema de phishing.', 'Aberto', 'Fraudes', 2, 6);
 
 -- Popular a tabela Detetive
 INSERT INTO Detetive (id_detetive, data_reg, nome, password, idade, telefone, email, morada, especialidade, horario, idAdmin)
@@ -105,45 +104,3 @@ VALUES
   (2, 4), -- Detective Jessica Ferreira responsavel pelo caso 2
   (3, 5), 
   (6, 6);  
-  
-  -- crir um user Administrador
-
-DROP USER IF EXISTS 'adminManel'@'localhost';
-CREATE USER 'adminManel'@'localhost' IDENTIFIED BY 'manelpass';
-
-GRANT ALL PRIVILEGES ON *.* TO 'adminManel'@'localhost' WITH GRANT OPTION;
-FLUSH PRIVILEGES;
-
-INSERT INTO Administrador (idAdmin, email, pass, nome)
-VALUES
-(4, 'adminManel@example.com', 'manelpass', 'Manuel');
-  
--- creação um user Cliente
-  
-DROP USER IF EXISTS 'cliente'@'localhost';
-CREATE USER 'cliente'@'localhost' IDENTIFIED BY 'clientepass';
-
-GRANT SELECT, INSERT, UPDATE ON agencia.* TO 'cliente'@'localhost';
-FLUSH PRIVILEGES;
-
-INSERT INTO Cliente (id_Cliente, password, nome, idade, email, telefone, idAdmin)
-VALUES
-(10, 'clientepass', 'Cliente Exemplo', 30, 'cliente@example.com', '912345678', 1);
-
-
-
--- criar um utilizador Detetive
-DROP USER IF EXISTS 'carlos'@'localhost';
-CREATE USER 'carlos'@'localhost' IDENTIFIED BY 'carlospass';
-
-GRANT SELECT, INSERT, UPDATE ON agencia.* TO 'carlos'@'localhost';
-FLUSH PRIVILEGES;
-
-INSERT INTO Detetive (id_detetive, data_reg, nome, password, idade, telefone, email, morada, especialidade, horario, idAdmin)
-VALUES
-(7, '2024-05-28', 'Carlos Silva', 'carlospass', 34, '912345678', 'carlos.silva@detetive.com', 'Vila Verde', 'Investigação de fraudes', 'Segunda a Sexta, das 9h às 18h', 2);
-
-
-
-
-
